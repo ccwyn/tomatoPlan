@@ -25,31 +25,10 @@ Page({
         userId: null
     },
     onLoad: function(t) {
-        this.fetchTypeList(), this.getSettingData();
+        this.fetchTypeList()
+        this.getSettingData();
     },
-    onShareAppMessage: function(t) {
-        return "button" === t.from && console.log(t.target), {
-            title: "Scrum番茄闹钟",
-            path: "/pages/index/index",
-            success: function(t) {
-                wx.showToast({
-                    title: "转发成功",
-                    icon: "success",
-                    duration: 2e3
-                });
-            },
-            fail: function(t) {
-                wx.showToast({
-                    title: "转发失败，再次转发",
-                    icon: "success",
-                    duration: 2e3
-                });
-            },
-            complete: function(t) {
-                console.log("用户转发了");
-            }
-        };
-    },
+
     onShow: function() {
         var t = this.data.isRuning;
         t || this.getSettingData();
@@ -63,6 +42,38 @@ Page({
         this.data.isRuning;
         this.setData({
             hideFlag: !0
+        });
+    },
+    fetchTypeList: function() {
+        var t = this;
+        wx.cloud.database().collection("tomato_category").get({
+            success: function(e) {
+                console.log(e);
+                e.data.length > 0 ? t.setData({
+                    taskTypeList: e.data
+                }) : t.setData({
+                    taskTypeList: []
+                });
+            }
+        });
+    },
+    getSettingData: function() {
+        var e = this;
+        wx.cloud.database().collection("setting").get({
+            success: function(a) {
+                1 == a.data.length ? e.setData({
+                    workTime: a.data[0].taskMinutes,
+                    restTime: a.data[0].restMinutes
+                }) : e.setData({
+                    workTime: 1,
+                    restTime: 5
+                });
+                var i = t.formatTime(e.data.workTime, "HH");
+                t.formatTime(e.data.restTime, "HH");
+                e.setData({
+                    remainTimeText: i + ":00"
+                });
+            }
         });
     },
     startTimer: function(t) {
@@ -84,6 +95,7 @@ Page({
             typeId: m
         };
     },
+    
     startNameAnimation: function() {
         var t = wx.createAnimation();
         t.opacity(.2).step(), t.opacity(1).step(), this.setData({
@@ -128,11 +140,12 @@ Page({
             rightDeg: a.right - 180 * (i - (e.startTime + m)) / m
         }));
     },
-    changeLogName: function(t) {
-        this.logName = t.detail.value;
-    },
+    // changeLogName: function(t) {
+    //     this.logName = t.detail.value;
+    // },
     saveLog: function(e) {
         var a = e;
+        console.log(a);
         a.startTime = t.formatDate(new Date(e.startTime)), a.endTime = t.formatDate(new Date(e.endTime)), 
         wx.cloud.database().collection("tomato").add({
             data: a
@@ -140,35 +153,11 @@ Page({
             console.log("添加记录成功!");
         });
     },
-    getSettingData: function() {
-        var e = this;
-        wx.cloud.database().collection("setting").get({
-            success: function(a) {
-                1 == a.data.length ? e.setData({
-                    workTime: a.data[0].taskMinutes,
-                    restTime: a.data[0].restMinutes
-                }) : e.setData({
-                    workTime: 20,
-                    restTime: 5
-                });
-                var i = t.formatTime(e.data.workTime, "HH");
-                t.formatTime(e.data.restTime, "HH");
-                e.setData({
-                    remainTimeText: i + ":00"
-                });
-            }
-        });
+    onShareAppMessage: function(t) {
+        return{
+            title: "Tomato番茄闹钟",
+            path: "/pages/index/index"
+
+        };
     },
-    fetchTypeList: function() {
-        var t = this;
-        wx.cloud.database().collection("tomato_category").get({
-            success: function(e) {
-                e.data.length > 0 ? t.setData({
-                    taskTypeList: e.data
-                }) : t.setData({
-                    taskTypeList: []
-                });
-            }
-        });
-    }
 });

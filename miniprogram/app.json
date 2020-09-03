@@ -3,10 +3,7 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/setting/setting",
-    "pages/statistics/statistics",
-    "pages/feedback/feedback",
-    "pages/about/about",
-    "pages/version/version"
+    "pages/statistics/statistics"
   ],
   "window": {
     "backgroundTextStyle": "light",

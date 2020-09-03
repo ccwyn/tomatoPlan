@@ -10,40 +10,13 @@ Page({
         toastHidden: !0
     },
     onShareAppMessage: function(t) {
-        return "button" === t.from && console.log(t.target), {
+        return {
             title: "Scrum番茄闹钟",
-            path: "/pages/statistics/statistics",
-            success: function(t) {
-                wx.showToast({
-                    title: "转发成功",
-                    icon: "success",
-                    duration: 2e3
-                });
-            },
-            fail: function(t) {
-                wx.showToast({
-                    title: "转发失败，再次转发",
-                    icon: "success",
-                    duration: 2e3
-                });
-            },
-            complete: function(t) {
-                console.log("用户转发了");
-            }
+            path: "/pages/statistics/statistics"
         };
     },
     onShow: function() {
-        var t = this;
-        wx.cloud.callFunction({
-            name: "tomatototal"
-        }).then(function(o) {
-            var a = o.result;
-            t.setData({
-                total: a.total
-            }), a.total > 0 && t.getData();
-        }).catch(function(t) {
-            console.log(t);
-        });
+        this.getData()
     },
     onLoad: function() {},
     onReachBottom: function() {
@@ -78,6 +51,6 @@ Page({
     clearLog: function(t) {
         wx.setStorageSync("tomatos", []), this.switchModal(), this.setData({
             toastHidden: !1
-        }), this.getTomatos();
+        });
     }
 });

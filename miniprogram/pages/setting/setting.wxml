@@ -16,12 +16,12 @@
             </view>
         </view>
         <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_access" hoverClass="weui-cell_active">
+            <!-- <view class="weui-cell weui-cell_access" hoverClass="weui-cell_active">
                 <view class="weui-cell__bd">
                     <button openType="contact">联系客服</button>
                 </view>
-            </view>
-            <navigator appId="wx8abaf00ee8c3202e" class="weui-cell weui-cell_access" extraData="{{extraData}}" hoverClass="weui-cell_active" openType="navigate" path="/pages/index-v2/index-v2" target="miniProgram" url="/pages/setting/setting" version="release">
+            </view> -->
+            <!-- <navigator appId="wx8abaf00ee8c3202e" class="weui-cell weui-cell_access" extraData="{{extraData}}" hoverClass="weui-cell_active" openType="navigate" path="/pages/index-v2/index-v2" target="miniProgram" url="/pages/setting/setting" version="release">
                 <view class="weui-cell__bd">吐个槽</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>
@@ -32,7 +32,7 @@
             <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/version/version">
                 <view class="weui-cell__bd">版本更新</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-            </navigator>
+            </navigator> -->
         </view>
     </view>
 </view>
