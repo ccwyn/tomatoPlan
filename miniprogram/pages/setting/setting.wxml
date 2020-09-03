@@ -1,0 +1,37 @@
+<!--pages/setting/setting.wxml--><text>pages/setting/setting.wxml</text>tainer">
+            <view class="section panel">
+                <text class="section_title">工作时长(分钟)</text>
+                <view class="section_body">
+                    <slider bindchange="changeWorkTime" leftIcon="cancel" max="45" min="1" rightIcon="success_no_circle" showValue="true" value="{{workTime}}"></slider>
+                </view>
+                <text class="section_title">休息时长(分钟)</text>
+                <view class="section_body">
+                    <slider bindchange="changeRestTime" leftIcon="cancel" max="10" min="1" rightIcon="success_no_circle" showValue="true" value="{{restTime}}"></slider>
+                </view>
+                <view class="button-sp-area">
+                    <button bindtap="saveSetting" class="weui-btn mini-btn" type="primary">保存</button>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_access" hoverClass="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <button openType="contact">联系客服</button>
+                </view>
+            </view>
+            <navigator appId="wx8abaf00ee8c3202e" class="weui-cell weui-cell_access" extraData="{{extraData}}" hoverClass="weui-cell_active" openType="navigate" path="/pages/index-v2/index-v2" target="miniProgram" url="/pages/setting/setting" version="release">
+                <view class="weui-cell__bd">吐个槽</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/about/about">
+                <view class="weui-cell__bd">关于我们</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/version/version">
+                <view class="weui-cell__bd">版本更新</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+    </view>
+</view>
+<ad unitId="adunit-7c82e57d8c2cca6a"></ad>

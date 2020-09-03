@@ -1,0 +1,6 @@
+.full-width {
+    display: inline-block;
+    width: 100%;
+    margin: 2px 0;
+    font-size: 14px;
+}

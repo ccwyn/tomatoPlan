@@ -1,0 +1,27 @@
+<!--pages/index/index.wxml--><text>pages/index/index.wxml</text>   <view class="timer_main">
+        <view class="timer_time-wrap">
+            <view class="timer_progress_mask"></view>
+            <view class="timer_progress timer_left">
+                <view class="timer_circle timer_circle--left"></view>
+            </view>
+            <view class="timer_progress timer_right">
+                <view class="timer_circle timer_circle--right"></view>
+            </view>
+            <text class="timer_time" wx:if="{{!completed}}">{{remainTimeText}}</text>
+            <image class="timer_done" src="../../image/complete.png" wx:if="{{completed}}"></image>
+        </view>
+    </view>
+    <view class="text-center {{isRuning?'hide':''}}">
+        <text class="task-tip select-title">选择一个任务</text>
+    </view>
+    <view class="text-center {{isRuning?'hide':''}}">
+        <text class="task-tip">在接下来{{workTime}}分钟内，专注完成它。</text>
+    </view>
+    <view class="timer_footer">
+        <view bindtap="startTimer" class="timer_ctrl {{isRuning?'hide':''}}" data-index="{{$index}}" wx:for="{{taskTypeList}}" wx:for-index="$index" wx:for-item="taskType" wx:key="$index">{{taskType.name}}</view>
+    </view>
+    <view class="btn-action {{isRuning?'btn-show':''}}">
+        <button bindtap="cancelTimer" class="btn-cancel" type="warn">放弃</button>
+    </view>
+</view>
+<ad unitId="adunit-d1714f5d85ea0e38"></ad>
