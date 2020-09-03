@@ -1,4 +1,6 @@
-<!--pages/version/version.wxml--><text>pages/version/version.wxml</text>e__title">当前版本</view>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">当前版本</view>
         <view class="page__desc">
             <p>v1.3.2</p>
         </view>
@@ -54,5 +56,5 @@
             </view>
         </view>
     </view>
-    <ad unitId="adunit-756362b4b38f9dd8"></ad>
+    <!-- <ad unitId="adunit-756362b4b38f9dd8"></ad>\ -->
 </view>

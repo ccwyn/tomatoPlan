@@ -1,4 +1,5 @@
-<!--pages/statistics/statistics.wxml--><text>pages/statistics/statistics.wxml</text>
+<view wx:if="{{records.length}}">
+    <scroll-view class="container" scrollY="true">
         <view class="log panel">
             <view class="log_item">
                 <text>一共获得{{total}}</text>
@@ -13,4 +14,4 @@
     </scroll-view>
 </view>
 <view wx:else></view>
-<ad unitId="adunit-1af721c93f689295"></ad>
+<!-- <ad unitId="adunit-1af721c93f689295"></ad> -->

@@ -1,4 +1,6 @@
-<!--pages/feedback/feedback.wxml--><text>pages/feedback/feedback.wxml</text>itle">意见反馈</view>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">意见反馈</view>
         <view class="page__desc">您的反馈让我们服务变得更好</view>
     </view>
     <view class="page__bd">

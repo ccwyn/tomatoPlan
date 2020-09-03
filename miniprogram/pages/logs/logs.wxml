@@ -1,4 +1,5 @@
-<!--pages/logs/logs.wxml--><text>pages/logs/logs.wxml</text>ainer" scrollY="true">
+<block wx:if="{{logs.length}}">
+    <scroll-view class="container" scrollY="true">
         <view class="log panel">
             <view class="log_item" wx:for="{{logs}}" wx:for-index="$index" wx:for-item="log" wx:key="*this">
                 <text class="log_start">{{log.startTime}}</text>

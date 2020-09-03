@@ -1,4 +1,6 @@
-<!--pages/about/about.wxml--><text>pages/about/about.wxml</text>ass="page__title">Scrum番茄闹钟</view>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">Scrum番茄闹钟</view>
         <view class="page__desc">
             <p>敏捷个人管理必备工具，让您专注工作、学习、运动和娱乐。</p>
         </view>
@@ -36,5 +38,4 @@
             </view>
         </view>
     </view>
-    <ad unitId="adunit-756362b4b38f9dd8"></ad>
 </view>

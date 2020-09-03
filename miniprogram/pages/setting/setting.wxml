@@ -1,4 +1,6 @@
-<!--pages/setting/setting.wxml--><text>pages/setting/setting.wxml</text>tainer">
+<view class="page">
+    <view class="page__bd">
+        <view class="container">
             <view class="section panel">
                 <text class="section_title">工作时长(分钟)</text>
                 <view class="section_body">
@@ -34,4 +36,4 @@
         </view>
     </view>
 </view>
-<ad unitId="adunit-7c82e57d8c2cca6a"></ad>
+<!-- <ad unitId="adunit-7c82e57d8c2cca6a"></ad> -->
