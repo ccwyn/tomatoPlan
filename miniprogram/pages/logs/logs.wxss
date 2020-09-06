@@ -1,19 +1,25 @@
 .container {
-    padding-bottom: 50px;
-    max-height: 92%;
+    min-height: 100vh;
+
 }
 
 .log {
-    color: #999;
-    margin: 15px 10px;
+    color: #333;
+    /* margin: 15px 10px; */
 }
 
 .log_item {
     padding: 15px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 32rpx;
+    border-bottom: 1px solid #f3f3f3 ;
 }
 
 .log_item text {
     padding-right: 20px;
+    /* float: left; */
 }
 
 .clear {
@@ -29,4 +35,10 @@
     color: #fff;
     background-color: #fd8f58;
     border-radius: 2px;
+}
+
+.panel{
+    box-sizing: border-box;
+    height: 100%;
+
 }

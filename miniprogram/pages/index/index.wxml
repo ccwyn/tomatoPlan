@@ -9,7 +9,7 @@
                 <view class="timer_circle timer_circle--right"></view>
             </view>
             <text class="timer_time" wx:if="{{!completed}}">{{remainTimeText}}</text>
-            <image class="timer_done" src="../../image/complete.png" wx:if="{{completed}}"></image>
+            <view class="timer_done" wx:if="{{completed}}">完成</view>
         </view>
     </view>
     <view class="text-center {{isRuning?'hide':''}}">
@@ -21,8 +21,8 @@
     <view class="timer_footer">
         <view bindtap="startTimer" class="timer_ctrl {{isRuning?'hide':''}}" data-index="{{$index}}" wx:for="{{taskTypeList}}" wx:for-index="$index" wx:for-item="taskType" wx:key="$index">{{taskType.name}}</view>
     </view>
-    <view class="btn-action {{isRuning?'btn-show':''}}">
-        <button bindtap="cancelTimer" class="btn-cancel" type="warn">放弃</button>
+    <view class="btn-fq btn-action {{isRuning?'btn-show':''}}">
+        <button bindtap="cancelTimer" class="btn-cancel">放弃</button>
     </view>
 </view>
 <!-- <ad unitId="adunit-d1714f5d85ea0e38"></ad> -->

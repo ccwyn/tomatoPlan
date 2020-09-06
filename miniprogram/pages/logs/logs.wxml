@@ -1,21 +1,15 @@
-<block wx:if="{{logs.length}}">
-    <scroll-view class="container" scrollY="true">
+<view wx:if="{{records.length}}">
+    <view class="container">
         <view class="log panel">
-            <view class="log_item" wx:for="{{logs}}" wx:for-index="$index" wx:for-item="log" wx:key="*this">
-                <text class="log_start">{{log.startTime}}</text>
-                <text class="log_action">{{log.action}}</text>
-                <text class="log_action">{{log.name}}</text>
+            <view class="log_item">
+                 <text style="font-weight:bold;font-size:42rpx">累计番茄 {{total}}</text>
+            </view>
+            <view class="log_item" wx:for="{{records}}" wx:for-index="$index" wx:for-item="record" wx:key="$index">
+                <text class="log_start">{{record.typeName}}</text>
+                <text class="log_action">{{record.endTime}}</text>
             </view>
         </view>
-    </scroll-view>
-    <view class="clear">
-        <button bindtap="switchModal" class="clear_btn" size="mini">清除记录</button>
     </view>
-    <modal bindcancel="switchModal" bindconfirm="clearLog" cancelText="取消" confirmText="确定" hidden="{{modalHidden}}" title="提示">
-	    是否清除记录？此操作不可恢复!
-	</modal>
-</block>
-<view class="nodata" wx:else>
-    <image class="nodata_img" src="../../image/nodata.png"></image>
 </view>
-<toast bindchange="hideToast" hidden="{{toastHidden}}">清除成功！</toast>
+<view wx:else></view>
+<!-- <ad unitId="adunit-1af721c93f689295"></ad> -->
