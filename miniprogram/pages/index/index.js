@@ -66,7 +66,7 @@ Page({
                     workTime: a.data[0].taskMinutes,
                     restTime: a.data[0].restMinutes
                 }) : e.setData({
-                    workTime: 1,
+                    workTime: 25,
                     restTime: 5
                 });
                 var i = t.formatTime(e.data.workTime, "HH");

@@ -14,7 +14,7 @@ exports.main = async (event, context) => {
   const total = countResult.total;
   const totalPage = Math.ceil(total / 10);
   var hasMore;
-  if (pageIndex > totalPage || pageIndex == totalPage) {
+  if (pageIndex >= totalPage) {
     hasMore = false;
   } else {
     hasMore = true;
